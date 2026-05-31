@@ -1,7 +1,7 @@
 # Clusterização de dados
 
 - Notebook do tema
-  - [2-clusterização-de-dados.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.ipynb) - Clusterização prática e sistema de recomendação.
+  - [2-clusterização-de-dados.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.py) - Clusterização prática e sistema de recomendação.
 
 - Introdução
   - Definição: agrupar dados não rotulados em grupos (clusters) de alta similaridade interna e baixa similaridade externa
