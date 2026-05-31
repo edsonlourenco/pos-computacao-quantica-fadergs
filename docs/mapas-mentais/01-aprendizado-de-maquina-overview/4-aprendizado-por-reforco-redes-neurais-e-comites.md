@@ -1,9 +1,9 @@
 # Aprendizado por Reforço, Redes Neurais e Comitês
 
 - Notebooks do tema
-  - [4-rl-q-learning.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.py) - Q-learning tabular e análise de política.
-  - [4b-redes-neurais-comites.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.py) - Redes neurais e comitês juntos.
-  - [4-aprendizado-por-reforco-redes-neurais-e-comites.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.py) - Integração prática do tema completo.
+  - [4-rl-q-learning.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.ipynb) - Q-learning tabular e análise de política.
+  - [4b-redes-neurais-comites.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.ipynb) - Redes neurais e comitês juntos.
+  - [4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb) - Integração prática do tema completo.
 
 - Unidade: visão geral e objetivos
   - Aprender fundamentos de Aprendizado por Reforço (RL)
