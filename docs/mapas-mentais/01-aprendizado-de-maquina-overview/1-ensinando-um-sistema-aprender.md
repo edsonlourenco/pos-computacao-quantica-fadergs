@@ -1,7 +1,7 @@
 # Ensinando um sistema a aprender
 
 - Notebook do tema
-  - [1-classificadores.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.ipynb) - Classificadores práticos em Python.
+  - [1-classificadores.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.py) - Classificadores práticos em Python.
 
 - Introdução
   - Aprendizado de máquina melhora processos invisíveis: previsão de demanda, classificação de busca, recomendações, detecção de fraude, tradução

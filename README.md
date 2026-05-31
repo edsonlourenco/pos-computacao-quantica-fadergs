@@ -41,17 +41,17 @@ Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópi
 ### 1. Ensinando um Sistema a Aprender
 *   **O que significa?** Como usar dados históricos para treinar um modelo para fazer previsões e como medir se ele está indo bem. Também abordamos o cuidado para o computador não "decorar" as respostas do passado em vez de aprender de verdade (um problema chamado de *overfitting*).
 *   🧠 **Resumo Teórico:** [1-ensinando-um-sistema-aprender.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/1-ensinando-um-sistema-aprender.md)
-*   📓 **Código Prático:** [1-classificadores.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.ipynb)
+*   📓 **Código Prático:** [1-classificadores.py](src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.py)
 
 ### 2. Clusterização de Dados
 *   **O que significa?** É a técnica de agrupar coisas parecidas quando não temos respostas prontas. Por exemplo, agrupar clientes de um e-commerce em "grupos de interesses parecidos" para enviar promoções personalizadas. Também estudamos como criar sistemas de recomendação (como os da Netflix).
 *   🧠 **Resumo Teórico:** [2-clusterização-de-dados.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/2-clusterização-de-dados.md)
-*   📓 **Código Prático:** [2-clusterização-de-dados.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.ipynb)
+*   📓 **Código Prático:** [2-clusterização-de-dados.py](src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.py)
 
 ### 3. Regressão e Séries Temporais
 *   **O que significa?** Usado para prever números exatos (como o preço de uma ação amanhã, o faturamento de uma empresa no próximo mês ou a temperatura). Estudamos como identificar tendências que mudam ao longo do tempo.
 *   🧠 **Resumo Teórico:** [3-regressão-e-séries-temporais.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/3-regressão-e-séries-temporais.md)
-*   📓 **Código Prático:** [3-regressão-e-séries-temporais.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.ipynb)
+*   📓 **Código Prático:** [3-regressão-e-séries-temporais.py](src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.py)
 
 ### 4. Aprendizado por Reforço, Redes Neurais e Comitês
 *   **O que significa?** 
@@ -60,9 +60,9 @@ Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópi
     *   *Comitês:* Juntar várias inteligências artificiais simples para trabalharem juntas, melhorando o resultado final (a união faz a força!).
 *   🧠 **Resumo Teórico:** [4-aprendizado-por-reforco-redes-neurais-e-comites.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/4-aprendizado-por-reforco-redes-neurais-e-comites.md)
 *   📓 **Códigos Práticos:**
-    *   [4-rl-q-learning.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.ipynb) (Aprendizado por Reforço na prática)
-    *   [4b-redes-neurais-comites.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.ipynb) (Redes neurais e combinação de modelos)
-    *   [4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb](src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb) (Integração de todos os temas do módulo)
+    *   [4-rl-q-learning.py](src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.py) (Aprendizado por Reforço na prática)
+    *   [4b-redes-neurais-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.py) (Redes neurais e combinação de modelos)
+    *   [4-aprendizado-por-reforco-redes-neurais-e-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.py) (Integração de todos os temas do módulo)
 
 ---
 

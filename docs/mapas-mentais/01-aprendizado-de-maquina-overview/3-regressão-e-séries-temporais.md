@@ -1,7 +1,7 @@
 # Regressão e séries temporais
 
 - Notebook do tema
-  - [3-regressão-e-séries-temporais.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.ipynb) - Regressão e séries temporais em Python.
+  - [3-regressão-e-séries-temporais.py](../../../src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.py) - Regressão e séries temporais em Python.
 
 - Visão geral
   - A regressão é uma técnica de análise estatística para modelar e prever valores de uma variável dependente a partir de variáveis independentes
