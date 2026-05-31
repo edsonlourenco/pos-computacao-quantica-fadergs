@@ -40,22 +40,6 @@
 # - definição do modelo,
 # - treinamento com exemplos rotulados,
 # - produção de previsões em dados novos.
-# 
-# ## Índice
-# 
-# 1. `Importando as bibliotecas`
-# 2. `Importando o modelo Naive Bayes`
-# 3. `Carregando os dados`
-# 4. `Separando a base de treino da validação`
-# 5. `Criando o classificador`
-# 6. `Treinando o classificador`
-# 7. `Realizando as previsões`
-# 8. `Avaliação e interpretação dos resultados`
-#     - `Tabela comparando verdadeiros x preditos`
-#     - `Mostrar as primeiras linhas`
-#     - `Métricas`
-#     - `Matriz de confusão visual`
-#     - `Exemplos classificados incorretamente`
 
 
 # %% [markdown]
