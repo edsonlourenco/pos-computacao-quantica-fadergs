@@ -1,0 +1,126 @@
+# Clusterização de dados
+
+- Notebook do tema
+  - [2-clusterização-de-dados.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.ipynb) - Clusterização prática e sistema de recomendação.
+
+- Introdução
+  - Definição: agrupar dados não rotulados em grupos (clusters) de alta similaridade interna e baixa similaridade externa
+  - Valor: dados não rotulados são abundantes, mas difíceis de interpretar
+  - Caso Netflix Prize: desafio para melhorar recomendações usando preferências de usuários
+  - Objetivo da unidade: aprender algoritmos, escolher métodos, avaliar qualidade e construir sistemas de recomendação
+
+- Caso de estudo
+  - Segmentação de clientes de um e-commerce para marketing e fidelidade
+  - Base de dados usada: Online Retail Dataset (Kaggle)
+  - Meta: identificar perfis de compra e gerar promoções personalizadas
+
+- Tipos de algoritmos de clusterização
+  - Métodos por particionamento
+    - K-Means (K-médias)
+      - K é o número pré-definido de clusters
+      - Centroides representam cada cluster
+      - Processo iterativo: atribuir pontos ao centroide mais próximo + recalcular centroides
+      - Critério de parada: centroide não muda entre iterações
+      - Limitações: sensível à inicialização e ao valor de k
+      - Uso: eficiente para conjuntos de dados grandes e clusters convexos
+    - Affinity Propagation (AP)
+      - Apresenta um número automático de clusters
+      - Cada ponto é nó em um grafo e troca mensagens com outros nós
+      - Exemplar = ponto representante de um cluster
+      - Matrizes principais:
+        - Similaridade: medida entre pares de amostras
+        - Responsabilidade: quanto um ponto é adequado como exemplar para outro
+        - Disponibilidade: chance de um ponto ser exemplar
+        - Valor de critério: soma de responsabilidade e disponibilidade
+      - Parâmetro importante: damping (0 a 1) controla oscilações das mensagens
+      - Referência: Affinity Propagation, Frey & Dueck, 2007
+    - DBSCAN (Density-Based Spatial Clustering of Applications with Noise)
+      - Agrupa regiões densas de amostras e identifica ruído
+      - Parâmetros:
+        - eps: raio máximo para vizinhança
+        - min_samples: número mínimo de pontos para formar um cluster
+      - Vantagem: detecta clusters de forma arbitrária e trata outliers
+  - Métodos hierárquicos
+    - Hierarchical Clustering (HC)
+      - Organiza amostras em estrutura de árvore (dendrograma)
+      - Dois tipos:
+        - Aglomerativo (HAC: Hierarchical Agglomerative Clustering)
+          - Começa com cada ponto como cluster separado
+          - Mescla pares de clusters até formar um único cluster geral
+        - Divisivo
+          - Começa com todos os pontos em um cluster
+          - Divide sucessivamente em subclusters
+      - Dendrograma: gráfico que permite escolher k cortando em diferentes níveis
+    - Modelos de conexão (linkage)
+      - Single Link: distância mínima entre pontos de dois clusters
+      - Average Link: distância média entre pontos ou centroides
+      - Complete Link: distância máxima entre pontos de dois clusters
+      - Parâmetros em scikit-learn:
+        - affinity: métrica de similaridade/distância
+        - linkage: método de ligação
+        - n_clusters: número de clusters desejados
+  - Métodos baseados em densidade
+    - Conceito: clusters são regiões densas de pontos separados por áreas menos densas
+    - Ideal para grupos de forma arbitrária e para detecção de ruído
+  - Métodos baseados em modelo
+    - Criam hipótese sobre a forma dos clusters e ajustam o modelo aos dados
+    - Úteis quando existe um modelo estatístico conhecido para os dados
+  - Métodos baseados em grafos
+    - Amostras viram nós de um grafo
+    - Arestas ligam pontos próximos (por exemplo, k vizinhos mais próximos)
+    - Alta conectividade indica cluster
+
+- Avaliação da clusterização
+  - Importância: nem sempre há uma única solução boa
+  - Índices internos: avaliam a qualidade apenas pelos dados e clusterização gerada
+  - Índices externos: comparam com rótulos conhecidos quando disponíveis
+  - Qualidade de clusters depende de similaridade e dissimilaridade
+  - Métricas comuns para algoritmos de agrupamento:
+    - Silhueta
+    - Adjusted Mutual Information (AMI)
+    - Adjusted Rand Score
+    - Acurácia e outras métricas de classificação são usadas quando há rótulos reais
+
+- Sistemas de recomendação
+  - Definição: sistema que usa dados de usuários e itens para sugerir conteúdos ou produtos
+  - Importância: personalização, engajamento e melhores decisões de compra
+  - Uso de dados não rotulados e interações históricas
+  - Abordagens principais:
+    - Filtragem colaborativa
+      - Usuário-Item: usa matriz de interações entre usuários e itens
+      - Usuário-usuário: encontra usuários semelhantes
+      - Item-item: encontra itens semelhantes
+      - Exemplo: sistemas de recomendações da Netflix e Spotify
+      - Desafio: cold-start (usuários ou itens novos)
+    - Baseado em conteúdo (Content-based)
+      - Recomendação com base nas características dos itens
+      - Usa metadados como gênero, diretor, descrição, atores
+      - Recomendado quando há pouco histórico de interações
+    - Baseado em conhecimento
+      - Usa regras, contexto e características explícitas de usuários e itens
+      - Bom para domínios complexos ou dados escassos
+
+- Prática e ferramentas
+  - Python + pandas + NumPy
+  - scikit-learn para clusterização e hierarquias
+  - SciPy para clustering hierárquico avançado
+  - Surprise para sistemas de recomendação baseado em avaliações
+  - Google Colab para prototipagem em nuvem
+
+- Siglas e termos explicados
+  - K: número de clusters no K-Means
+  - AP: Affinity Propagation
+  - HC: Hierarchical Clustering
+  - HAC: Hierarchical Agglomerative Clustering
+  - DBSCAN: Density-Based Spatial Clustering of Applications with Noise
+  - k-NN: k-Nearest Neighbors, método de vizinhança usado em filtragem colaborativa
+  - ROC: Receiver Operating Characteristic
+  - AUC: Area Under the Curve
+
+- Referências para ampliar a pesquisa
+  - “A comprehensive survey of clustering algorithms”, Springer, 2015
+  - Aggarwal, C. C. “Recommender Systems: The Textbook”, 2016
+  - Scikit-Learn clustering docs: https://scikit-learn.org/stable/modules/clustering.html
+  - Affinity Propagation original: https://en.wikipedia.org/wiki/Affinity_propagation
+  - Netflix Prize: https://www.netflixprize.com
+  - Tutorial Surprise: http://surpriselib.com

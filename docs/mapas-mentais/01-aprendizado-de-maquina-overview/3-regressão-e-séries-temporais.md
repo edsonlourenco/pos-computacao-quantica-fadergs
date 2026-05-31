@@ -1,0 +1,152 @@
+# Regressão e séries temporais
+
+- Notebook do tema
+  - [3-regressão-e-séries-temporais.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.ipynb) - Regressão e séries temporais em Python.
+
+- Visão geral
+  - A regressão é uma técnica de análise estatística para modelar e prever valores de uma variável dependente a partir de variáveis independentes
+  - Aplicações em finanças, produção, manutenção preditiva, saúde e previsão de séries temporais
+  - Objetivo: descobrir tendências e relações entre variáveis para suportar decisões futuras
+
+- Exemplo de estudo: previsão do valor de uma ação
+  - Base de dados histórica de preços de ações
+  - Problema: prever o preço futuro com base em preços passados (séries temporais)
+  - Vantagem: antecipar tendências para melhorar decisões de compra e venda
+
+- Conceitos fundamentais
+  - Regressão: modelar correlação entre variáveis e prever Y a partir de X
+  - Correlação: força e direção da relação entre duas variáveis
+  - Covariância: medida de associação linear, sensível à escala
+  - Causalidade: relação de causa e efeito, não garantida pela correlação
+  - Interpolação: previsão dentro do intervalo dos dados
+  - Extrapolação: previsão fora do intervalo dos dados
+
+- Tipos de regressão
+  - Regressão linear
+    - Modelo linear: f(x) = a + b x
+    - Relação entre variáveis descrita por uma reta ou hiperplano
+  - Regressão não linear
+    - Modelos polinomiais, exponenciais, logarítmicos
+    - Não pode ser representada por uma simples reta
+  - Regressão simples
+    - Uma variável independente X e uma variável dependente Y
+  - Regressão multivariada
+    - Várias variáveis independentes X1, X2, X3...
+    - Modelo linear multivariado: f(X) = a + b1 X1 + b2 X2 + b3 X3
+    - Resultado: superfície de regressão em vez de uma linha
+
+- Funções de custo e métricas de erro
+  - Função de custo (loss function)
+    - Mede o erro do modelo entre valores preditos e reais
+    - Usada para comparar modelos e otimizar parâmetros
+  - RSS (Residual Sum of Squares)
+    - Soma dos quadrados dos resíduos
+    - RSS = Σ(yi - ŷi)²
+  - MSE (Mean Squared Error)
+    - Erro quadrático médio
+    - MSE = (1/n) Σ(yi - ŷi)²
+    - Penaliza erros maiores com mais intensidade
+  - RMSE (Root Mean Squared Error)
+    - Raiz do erro quadrático médio
+    - Facilita interpretação na mesma escala da variável alvo
+  - MAE (Mean Absolute Error)
+    - Erro médio absoluto
+    - MAE = (1/n) Σ|yi - ŷi|
+    - Mais robusto a outliers
+  - R² (coeficiente de determinação)
+    - Percentual da variabilidade de Y explicada pelo modelo
+    - Varia entre 0 e 1
+    - Valor maior indica melhor ajuste, mas pode ser enganoso com muitos preditores
+  - R² ajustado
+    - Corrige o R² pela quantidade de preditores
+    - Não aumenta automaticamente com mais variáveis
+
+- Otimização de modelos
+  - Método dos Mínimos Quadrados Ordinários (MQO / OLS)
+    - Objetivo: minimizar RSS por solução analítica
+    - Também chamado de Método dos Mínimos Quadrados (MMQ)
+    - Requer suposições: linearidade, normalidade dos erros, homocedasticidade, independência dos erros
+  - Gradiente Descendente
+    - Itera ajustando parâmetros na direção de menor erro
+    - Requer taxa de aprendizado (learning rate)
+    - Pode encontrar mínimos locais em vez do mínimo global
+    - Variações: Stochastic Gradient Descent (SGD), mini-batch
+
+- Regularização
+  - Propósito: evitar overfitting adicionando penalização ao modelo
+  - Regularização L1 (Lasso)
+    - L1: somatório dos valores absolutos dos coeficientes
+    - Lasso = Least Absolute Shrinkage and Selection Operator
+    - Pode zerar coeficientes e realizar seleção de variáveis
+  - Regularização L2 (Ridge)
+    - L2: somatório dos quadrados dos coeficientes
+    - Penaliza valores grandes dos coeficientes
+    - Reduz variância do modelo
+  - ElasticNet
+    - Combinação de L1 e L2
+    - Controlado por _alpha_ e _l1_ratio_
+    - Permite balancear seleção de variáveis e estabilidade
+
+- Modelos avançados mencionados no material
+  - Modelos Lineares Generalizados (MLG / GLM)
+    - Extensão da regressão linear para outras distribuições além da normal
+    - Define:
+      - distribuição da variável resposta
+      - variáveis explicativas
+      - função de ligação (link function)
+    - Distribuições típicas: Poisson, Bernoulli, Gama
+  - Regressão logística
+    - Útil para variável dependente categórica
+    - Estima probabilidades de eventos
+    - Coeficientes determinados por máxima verossimilhança
+  - Árvores de regressão
+    - Similar à árvore de decisão, mas otimiza MSE em cada divisão
+    - Random Forest Regressor combina várias árvores
+  - Support Vector Regression (SVR)
+    - Adaptação de Support Vector Machines para regressão
+    - Parâmetros importantes:
+      - C: regularização
+      - gamma: alcance da influência de um exemplo
+      - epsilon: margem de tolerância de erro
+
+- Séries temporais no contexto do estudo
+  - Previsão de preços de ações ao longo do tempo
+  - Identificação de tendência e sazonalidade
+  - Uso de regressão para detectar padrões em séries históricas
+  - Extrapolação de dados para estimar valores futuros
+
+- Aplicações e exemplos do material
+  - Mercado financeiro: previsão de valor de ações
+  - Planejamento estratégico: demanda futura de produtos
+  - Engenharia: manutenção preditiva de equipamentos
+  - Saúde: projeção de epidemias e necessidade de recursos
+  - Estudos de caso: Moneyball / Sabermetrics em esportes
+
+- Siglas explicadas
+  - RSS: Residual Sum of Squares (Soma dos Resíduos ao Quadrado)
+  - MSE: Mean Squared Error (Erro Quadrático Médio)
+  - RMSE: Root Mean Squared Error (Raiz do Erro Quadrático Médio)
+  - MAE: Mean Absolute Error (Erro Médio Absoluto)
+  - R²: Coeficiente de Determinação
+  - OLS: Ordinary Least Squares (Mínimos Quadrados Ordinários)
+  - SGD: Stochastic Gradient Descent (Gradiente Descendente Estocástico)
+  - MLG: Modelos Lineares Generalizados
+  - GLM: Generalized Linear Models
+  - L1 / L2: termos de penalização da regularização
+  - SVR: Support Vector Regression
+  - SVM: Support Vector Machine
+  - MAE: Mean Absolute Error
+
+- Referências para ampliar a pesquisa
+  - AYRES, 2008: análise de citações e impacto de artigos jurídicos
+  - BASTOS; GUIMARÃES; SEVERO, 2015: regressão no mercado financeiro
+  - RITZMAN; KRAJEWSKI, 2004: planejamento estratégico e demanda
+  - SANTANA; MELO FILHO, 2018: manutenção preditiva em engenharia
+  - MORETTIN, 2017: correlação e covariância
+  - OLIVEIRA, 2019: Modelos Lineares Generalizados
+  - HASTIE; TIBSHIRANI; FRIEDMAN, 2017: máxima verossimilhança e regressão logística
+  - RUDER, 2016: otimização de gradiente descendente
+  - SCIKIT-LEARN docs: https://scikit-learn.org/stable/modules/linear_model.html
+  - STATS MODELS: https://www.statsmodels.org
+  - TYLER VIGEN: https://tylervigen.com/old-version.html
+  - MONEYBALL linear regression guide: https://towardsdatascience.com/moneyball-linear-regression-76034259af5e

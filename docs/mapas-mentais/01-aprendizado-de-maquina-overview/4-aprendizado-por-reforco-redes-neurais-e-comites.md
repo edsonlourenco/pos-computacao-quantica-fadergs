@@ -1,0 +1,154 @@
+# Aprendizado por Reforço, Redes Neurais e Comitês
+
+- Notebooks do tema
+  - [4-rl-q-learning.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.ipynb) - Q-learning tabular e análise de política.
+  - [4b-redes-neurais-comites.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.ipynb) - Redes neurais e comitês juntos.
+  - [4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb](../../../src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.ipynb) - Integração prática do tema completo.
+
+- Unidade: visão geral e objetivos
+  - Aprender fundamentos de Aprendizado por Reforço (RL)
+  - Entender MDP, Q-learning e política de exploração/exploração
+  - Relacionar redes neurais com RL e DQN
+  - Compreender métodos de comitê (ensemble methods)
+  - Implementar Bagging, Stacking e AdaBoost
+
+- Aprendizado por Reforço (RL)
+  - Conceito
+    - Agente, ambiente, estados, ações, recompensas e política
+    - Aprendizagem por tentativa e erro
+    - Feedback atrasado e maximização cumulativa de recompensa
+    - Não depende de dados rotulados previamente
+  - Comparação com outros paradigmas
+    - Supervisionado: erro em rótulo conhecido
+    - Não supervisionado: busca estrutura oculta
+    - RL: maximiza sinal de recompensa
+  - Processo de Decisão de Markov (MDP)
+    - Definição: futuro depende apenas do estado atual
+    - Componentes: estados, ações, transições, recompensas e desconto
+    - Exemplo intuitivo: robô aspirador
+    - Ciclo: s → a → s' + r → nova política
+  - Função de valor e retorno
+    - Retorno G_t: soma cumulativa de recompensas futuras
+    - Valor de estado V(s) e valor de ação Q(s, a)
+    - Objetivo: maximizar retorno esperado
+  - Q-learning
+    - Algoritmo tabular para aprender Q(s,a)
+    - Q-table: linhas = estados, colunas = ações
+    - Atualização pelo Bellman backup
+      - Q(s,a) ← Q(s,a) + α [r + γ max_{a'} Q(s', a') - Q(s,a)]
+    - Parâmetros importantes
+      - α: taxa de aprendizado
+      - γ: fator de desconto
+      - ε: probabilidade de exploração (epsilon-greedy)
+    - Exploração vs. exploração
+      - Explorar: testar ações novas para descobrir melhores recompensas
+      - Explorar: usar política atual para maximizar retorno
+      - Armadilhas: políticas subótimas e convergência lenta
+    - Riscos e cuidados
+      - Ciclos locais e estado terminal
+      - Dependência de discretização do espaço
+      - Necessidade de balancear exploração/exploração
+    - Exemplos e estudos de caso
+      - Robô Baxter: aprendizado por demonstração e correção de movimentos
+      - Breakout/DeepMind: RL profundo com Keras e Q-learning avançado
+
+- Redes Neurais (RNAs)
+  - Definição e motivação
+    - Sistemas computacionais compostos de neurônios artificiais
+    - Estrutura em camadas: entrada, oculta, saída
+    - Pesos e funções de ativação como parâmetros de modelo
+    - Função aproximadora de relações complexas
+  - Funções de ativação
+    - Linear, sigmoide/logística, tanh, ReLU, step
+    - Não linearidade é essencial para representar funções complexas
+    - Diferenciabilidade permite treino por gradiente
+  - Topologias principais
+    - Feedforward
+      - Informação flui somente para frente
+      - Usado para classificação e regressão
+    - Recorrente (RNN)
+      - Conexões com feedback e memória temporal
+      - Adequado para sequências e séries temporais
+    - Convolucional (CNN)
+      - Filtros extraem características locais de imagens
+      - Camadas convolucionais detectam bordas, texturas, objetos
+      - Muito usado em visão computacional
+  - Redes neurais em RL
+    - Aproximação de função de valor e política
+    - Substituição da Q-table por rede neural em espaços grandes
+    - Deep Q-Networks (DQN): RL profundo com redes convolucionais
+  - Ferramentas e prática
+    - TensorFlow/Keras para construção de RNAs
+    - TensorFlow Playground para explorar hiperparâmetros
+    - Estudo de classificação de imagens como exemplo prático
+
+- Comitês / Ensemble Methods
+  - Motivação
+    - Um único preditor pode overfit ou underfit
+    - Combinar múltiplos modelos melhora generalização
+    - Usa diversidade de classificadores para reduzir erro
+  - Arquiteturas em paralelo
+    - Preditores independentes treinados na mesma base
+    - Resultado final por fusão de decisões
+      - Voto majoritário, soma, média, produto, min, max
+      - Métodos de ranking como Borda Count
+    - Bagging
+      - Bootstrap aggregation
+      - Reduz variância com múltiplos modelos semelhantes
+      - Exemplos: Random Forest
+    - Stacking
+      - Combina saídas de modelos base em um meta-modelo
+      - Permite aprendizado da melhor forma de combinar previsões
+  - Arquiteturas em série
+    - Preditores encadeados sequencialmente
+    - Cada modelo atende as amostras mais fáceis primeiro
+    - Reavaliação: amostras com baixa confiança são passadas adiante
+    - Redução de classes: cada estágio filtra classes candidatas
+    - Vantagem: eficiência computacional e especialização gradual
+  - Boosting
+    - Treina fracos learners em sequência
+    - Cada modelo subsequente foca nos erros do anterior
+    - Objetivo: reduzir viés e combinar preditores fracos em forte
+    - Estratégias de seleção de dados
+      - Filtragem, amostragem e ponderação
+    - AdaBoost
+      - Ajusta pesos de exemplos conforme erros anteriores
+      - Modelos fracos com maior precisão ganham maior peso
+      - Produz ensemble robusto e adaptativo
+
+- Conexões entre os temas
+  - RL e redes neurais
+    - Deep RL utiliza redes para representar valores/políticas
+    - Q-learning tabular vs. DQN com aproximação de função
+  - Redes neurais e métodos ensemble
+    - Ensembles podem conter RNAs como base learners
+    - Bagging e boosting aplicados a redes neurais em problemas complexos
+  - Combinando ideias
+    - Soluções reais usam RL profundo com ensembles em arquitetura híbrida
+
+- Siglas (explicações)
+  - **RL**: Reinforcement Learning (Aprendizado por Reforço)
+  - **Q-learning**: algoritmo RL sem modelo, baseado em Temporal Difference
+  - **DQN**: Deep Q-Network
+  - **MDP**: Markov Decision Process
+  - **CNN**: Convolutional Neural Network (Rede Neural Convolucional)
+  - **RNN**: Recurrent Neural Network (Rede Neural Recorrente)
+  - **LSTM**: Long Short-Term Memory
+  - **MLP**: Multi-Layer Perceptron
+  - **SGD**: Stochastic Gradient Descent
+  - **PPO**: Proximal Policy Optimization
+  - **A3C**: Asynchronous Advantage Actor-Critic
+  - **SARSA**: State-Action-Reward-State-Action
+  - **AdaBoost**: Adaptive Boosting
+  - **MSE**: Mean Squared Error
+  - **MAE**: Mean Absolute Error
+  - **ROC**: Receiver Operating Characteristic
+  - **AUC**: Area Under Curve
+  - **SVM**: Support Vector Machine
+
+- Leituras adicionais
+  - Sutton & Barto, Reinforcement Learning: An Introduction
+  - Goodfellow, Bengio & Courville, Deep Learning
+  - Zhou et al., Ensemble Methods: Foundations and Algorithms
+  - Mnih et al., Human-Level Control through Deep Reinforcement Learning
+  - TensorFlow Playground
