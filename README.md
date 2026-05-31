@@ -66,6 +66,51 @@ Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópi
 
 ---
 
+## 🚀 Como Rodar o Projeto Localmente
+
+Para executar os códigos e estudar em seu computador, siga os passos abaixo. Utilizaremos o **uv**, que é uma ferramenta moderna e extremamente rápida para gerenciar projetos em Python.
+
+### 1. Clonar o repositório
+Abra o seu terminal e rode o comando abaixo para baixar o código:
+```bash
+git clone https://github.com/edsonlourenco/pos-computacao-quantica-fadergs.git
+cd pos-computacao-quantica-fadergs
+```
+
+### 2. Instalar o `uv`
+Se você ainda não tem o `uv` instalado, pode instalá-lo facilmente:
+* **macOS / Linux:**
+  ```bash
+  curl -LsSf https://astral.sh/uv/install.sh | sh
+  ```
+* **Windows:**
+  ```powershell
+  powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
+  ```
+
+### 3. Criar o ambiente e instalar dependências
+Para preparar o ambiente virtual local (que evita misturar os pacotes deste projeto com outros do seu computador) e instalar todos os pacotes necessários descritos no arquivo [pyproject.toml](pyproject.toml), rode:
+```bash
+# Cria o ambiente virtual (.venv) e instala tudo automaticamente
+uv sync
+```
+
+### 4. Executar os códigos (.py interativos)
+Como convertemos os notebooks para arquivos `.py` interativos com linhas mágicas (`# %%`), você tem duas formas principais de executá-los:
+
+* **Pelo VS Code (Recomendado):**
+  1. Abra a pasta do projeto no VS Code.
+  2. Abra um dos arquivos `.py` dentro da pasta `src/01-aprendizado-de-maquina-overview/notebooks/`.
+  3. Clique na opção **"Run Cell"** (Executar Célula) que aparece em cima de cada bloco para rodar o código de forma interativa.
+
+* **Diretamente pelo terminal:**
+  Caso queira rodar o arquivo por inteiro como um script convencional do Python:
+  ```bash
+  uv run python src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.py
+  ```
+
+---
+
 ## 👥 Contribuições e Modificações
 
 Este repositório é público para incentivar o compartilhamento de conhecimento. Contudo, como o foco principal é meu desenvolvimento pessoal durante as disciplinas da pós-graduação, **qualquer alteração, sugestão ou conteúdo adicional deve passar estritamente pela minha avaliação e aprovação prévia**.
