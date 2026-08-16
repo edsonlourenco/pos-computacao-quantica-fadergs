@@ -23,7 +23,7 @@ O curso é muito completo e estruturado para cobrir desde a física básica nece
 | :--- | :--- | :---: | :--- |
 | **Eixo de Desenvolvimento Integral** | Felicidade no Trabalho e Performance Sustentável | 40 horas | Desenvolvimento de competências profissionais, bem-estar e carreira. |
 | **Eixo Específico (Obrigatórios)** | [Aprendizado de Máquina](#-aprendizado-de-máquina-ca-concluído) | 40 horas | Fundamentos de IA e algoritmos clássicos de aprendizado. |
-| | Conceitos de Computação Quântica | 40 horas | Bases e teorias matemáticas da computação quântica. |
+| | [Conceitos de Computação Quântica](#-conceitos-de-computação-quântica-ca-concluído) | 40 horas | Bases e teorias matemáticas da computação quântica. |
 | | Física para Computação Quântica e Qubit | 40 horas | Comportamento físico de qubits e sistemas quânticos. |
 | | Programação para Computação Quântica | 40 horas | Lógica e desenvolvimento de circuitos quânticos iniciais. |
 | | Aplicações com Python Qiskit | 40 horas | Uso da biblioteca Qiskit (IBM) para simular algoritmos quânticos. |
@@ -63,6 +63,32 @@ Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópi
     *   [4-rl-q-learning.py](src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.py) (Aprendizado por Reforço na prática)
     *   [4b-redes-neurais-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.py) (Redes neurais e combinação de modelos)
     *   [4-aprendizado-por-reforco-redes-neurais-e-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.py) (Integração de todos os temas do módulo)
+
+---
+
+## 🧬 Conceitos de Computação Quântica (CA Concluído)
+
+Este módulo cobre os fundamentos teóricos da computação quântica: da história da área até os algoritmos que hoje motivam o interesse do mercado. Como é um módulo mais teórico, os tópicos abaixo têm apenas **Mapas Mentais** (resumos teóricos em texto), sem notebooks de código.
+
+### 1. História da Computação Quântica
+*   **O que significa?** A trajetória da computação quântica desde as primeiras propostas teóricas (Feynman, Deutsch, Shor) até a corrida atual entre Google, IBM e outras empresas pela chamada "supremacia quântica" — o momento em que um computador quântico resolve algo que nenhum computador clássico consegue resolver em tempo viável.
+*   🧠 **Resumo Teórico:** [1-historia-da-computacao-quantica.md](docs/mapas-mentais/02-conceitos-computacao-quantica/1-historia-da-computacao-quantica.md)
+
+### 2. Fundamentos da Mecânica Quântica
+*   **O que significa?** A base de física necessária para entender computação quântica: por que a física clássica não explica certos fenômenos, o que é superposição, incerteza, emaranhamento e como esses conceitos são representados matematicamente.
+*   🧠 **Resumo Teórico:** [2-fundamentos-da-mecanica-quantica.md](docs/mapas-mentais/02-conceitos-computacao-quantica/2-fundamentos-da-mecanica-quantica.md)
+
+### 3. Tipos de Qubits
+*   **O que significa?** O qubit é a unidade básica de informação de um computador quântico, equivalente ao bit clássico, mas capaz de estar em superposição. Estudamos como ele é representado (esfera de Bloch), seus desafios (decoerência) e como diferentes empresas o constroem fisicamente (íons presos, spin de elétrons, supercondutores).
+*   🧠 **Resumo Teórico:** [3-tipos-de-qubits.md](docs/mapas-mentais/02-conceitos-computacao-quantica/3-tipos-de-qubits.md)
+
+### 4. Circuitos Quânticos
+*   **O que significa?** Assim como um circuito clássico combina portas lógicas para processar bits, um circuito quântico combina portas quânticas (Hadamard, CNOT, entre outras) para manipular qubits, criar superposição e emaranhamento.
+*   🧠 **Resumo Teórico:** [4-circuitos-quanticos.md](docs/mapas-mentais/02-conceitos-computacao-quantica/4-circuitos-quanticos.md)
+
+### 5. Algoritmos Quânticos
+*   **O que significa?** Os algoritmos que realmente mostram a vantagem de um computador quântico sobre um clássico, como o algoritmo de Shor (que ameaça a criptografia atual) e o algoritmo de Grover (busca mais rápida em listas não organizadas).
+*   🧠 **Resumo Teórico:** [5-algoritmos-quanticos.md](docs/mapas-mentais/02-conceitos-computacao-quantica/5-algoritmos-quanticos.md)
 
 ---
 

@@ -1,0 +1,152 @@
+# Sistemas Criptográficos
+
+- Introdução
+  - Foco da unidade: criptossistema de chaves assimétricas mais performático, protocolos para garantir confidencialidade de informações em trânsito e uma perspectiva de futuro com a criptografia quântica
+
+- Objetivos da unidade
+  - Conhecer o funcionamento do criptossistema de curvas elípticas e suas vantagens
+  - Entender como as chaves são estabelecidas no criptossistema de curvas elípticas
+  - Reconhecer os principais protocolos criptográficos
+  - Saber os principais protocolos seguros de comunicação
+  - Compreender a criptografia quântica
+
+- Criptossistema de curvas elípticas (ECC)
+  - Utiliza a matemática das curvas elípticas para promover criptografia de chave pública
+  - Segurança baseada na dificuldade de resolver problemas matemáticos: funções simples de calcular, mas muito difíceis de reverter
+  - Neal Koblitz e Victor Miller (década de 1980) concluíram que a estrutura matemática das curvas elípticas é fonte de problemas de difícil solução, servindo de base para criptossistemas assimétricos
+  - Dificuldade central: inviabilidade de calcular o logaritmo discreto de um elemento de curva elíptica aleatório em relação a um ponto base — problema do logaritmo discreto de curva elíptica (ECDLP)
+  - ECDSA (Elliptic Curve Digital Signature Algorithm)
+    - Algoritmo de assinatura digital amplamente usado para criptografia de chave pública baseado em curvas elípticas
+    - Vantagem sobre o RSA: força criptográfica equivalente com tamanhos de chave muito menores
+    - Desempenho comparável ao de algoritmos de criptografia simétrica, conhecidamente mais rápidos
+    - Equivalência de tamanhos de chave (bits)
+      - Simétrica 80 / ECDSA 160 / RSA 1024
+      - Simétrica 112 / ECDSA 224 / RSA 2048
+      - Simétrica 128 / ECDSA 256 / RSA 3072
+      - Simétrica 192 / ECDSA 384 / RSA 7680
+      - Simétrica 256 / ECDSA 512 / RSA 15360
+    - Menor esforço computacional e menor uso de largura de banda: vantagem relevante em dispositivos móveis e IoT
+    - Recomendado atualmente pelo Instituto Nacional de Padrões e Tecnologia dos Estados Unidos (NIST) e aprovado pela Agência Nacional de Segurança dos Estados Unidos (NSA)
+
+- Esquemas de estabelecimento de chaves
+  - Em criptografia de curvas elípticas, a segurança é garantida pelo problema do logaritmo discreto para curvas elípticas (DLP)
+  - Considerado impossível de resolver computacionalmente, o que garante que a chave não pode ser quebrada
+  - Definição matemática do DLP: dados os elementos R e Q de um grupo, e um primo P, encontrar um número k tal que R = Qᵏ mod P; k é chamado de logaritmo discreto de R na base Q
+
+- Protocolos seguros de comunicação e protocolos criptográficos
+  - Papel geral: garantir autenticação de mensagens e privacidade nas camadas de rede, transporte e aplicação; segurança em múltiplas camadas fortalece a proteção contra ataques
+  - IPSec (IP Security)
+    - Desenvolvido pelo IETF (Internet Engineering Task Force)
+    - Atua na camada de rede, oferecendo recursos de segurança a um pacote
+    - Modo de transporte
+      - Protege as informações entregues da camada de transporte para a camada de rede
+      - Não protege o cabeçalho IP
+      - Geralmente usado em comunicações host a host
+    - Modo túnel
+      - Protege todo o pacote, incluindo o cabeçalho IP original
+      - Gera um novo cabeçalho IP com informações distintas do original
+      - Geralmente usado entre dois roteadores, como em uma VPN Site-to-Site
+    - Protocolo AH (Authentication Header)
+      - Autentica o host de origem e garante integridade do payload
+      - Usa função hash e chave simétrica para criar um resumo de mensagem inserido no cabeçalho de autenticação
+      - Não oferece privacidade (sem criptografia do conteúdo)
+      - Identificado pelo valor 51 no campo de protocolo do cabeçalho IP
+    - Protocolo ESP (Encapsulating Security Payload)
+      - Criado posteriormente para suprir a falta de privacidade do AH
+      - Oferece autenticação de fonte, integridade e privacidade (criptografia)
+      - Adiciona cabeçalho e trailer ao payload, além de dados de autenticação
+      - Identificado pelo valor 50 no campo de protocolo do cabeçalho IP
+    - Serviços de segurança oferecidos pelo IPSec (AH x ESP)
+      - Controle de acesso: oferecido por ambos
+      - Autenticação de mensagens (integridade): oferecido por ambos
+      - Autenticação de entidades (fonte de dados): oferecido por ambos
+      - Confidencialidade: apenas pelo ESP
+      - Proteção contra ataque de repetição: oferecido por ambos
+    - Suportado tanto por IPv4 quanto por IPv6
+    - Transparente ao usuário final, pois é implementado em equipamentos como firewall ou roteador
+  - SSL/TLS
+    - Conexão SSL: relação ponto a ponto entre dois dispositivos se comunicando; toda conexão está associada a uma única sessão
+    - Sessão SSL: associação entre um cliente e um servidor, onde são definidos parâmetros criptográficos que podem ser compartilhados entre várias conexões, evitando renegociação a cada conexão
+      - Sessões criadas pelo Protocolo de Apresentação (Handshake Protocol)
+    - HTTPS: combinação do protocolo de aplicação HTTP com o SSL, provendo conexão segura entre servidor web e navegador
+      - Elementos criptografados: URL da página solicitada, conteúdo da página, conteúdo dos formulários enviados, cookies trocados entre navegador e servidor, conteúdo do cabeçalho HTTP
+  - PGP (Pretty Good Privacy)
+    - Criado por Philip Zimmermann para oferecer privacidade, integridade e autenticação, principalmente em e-mails
+    - Utiliza criptografia assimétrica
+    - Deixou de ser gratuito em 2004; o GnuPG (GPG) surgiu como alternativa livre e compatível com o PGP
+    - Teia de confiança (web-of-trust)
+      - Mecanismo usado pelo PGP para certificar que uma determinada chave pertence a um usuário, site ou empresa
+      - Princípio: se A confia em B e B confia em C, então A confia em C
+      - Construída por relações pessoais, verificação de identidade e assinatura cruzada de chaves públicas
+      - Após verificação do par de chaves, a chave pública é publicada em um servidor de chaves para consulta por qualquer interessado
+  - VPN (Virtual Private Network)
+    - Site-to-Site (também chamada Gateway-to-Gateway)
+      - Estabelecida entre dois equipamentos, normalmente roteadores ou firewalls
+      - Geralmente utiliza IPSec, criando um túnel seguro entre localidades inteiras
+      - Trata de conexões remotas entre redes inteiras
+    - Client-to-Site (também chamada Remote Access)
+      - Caracterizada por conexões pontuais de usuários remotos a uma rede
+      - Geralmente utiliza SSL-VPN
+    - SSL VPN
+      - Permite criar uma VPN sem uso de IPSec
+      - Geralmente disponibilizada como um portal web via firewall, com autenticação do usuário
+      - Um túnel é criado sobre a conexão SSL; protocolos da pilha TCP/IP são encapsulados nesse túnel, garantindo a conectividade dos recursos remotos acessados pelo navegador
+
+- Criptografia quântica
+  - Motivação: os sistemas de criptografia tradicionais baseiam sua segurança em problemas matemáticos difíceis, mas a computação quântica pode torná-los obsoletos
+  - Também conhecida, mais corretamente, como Distribuição Quântica de Chaves (QKD - Quantum Key Distribution)
+  - Abrange apenas a troca segura de chaves; a troca de mensagens em si continua utilizando métodos criptográficos clássicos
+  - Utiliza fótons para permitir que duas partes definam uma chave secreta que não pode ser quebrada por algoritmo, pois não é gerada matematicamente, mesmo usando um canal público e inseguro
+  - 1984: Bennett e Brassard propõem o primeiro protocolo de criptografia quântica, o BB84
+  - Princípio físico explorado: o simples fato de observar/medir um sistema quântico pode mudar seu estado, permitindo detectar quando um atacante interfere na comunicação
+  - Qubits versus bits clássicos
+    - Bits clássicos assumem apenas um valor por vez (0 ou 1)
+    - Qubits podem assumir 0 e 1 simultaneamente (superposição)
+    - Um registrador quântico de 8 qubits pode guardar todos os valores de 0 a 255 ao mesmo tempo, enquanto um registrador clássico de 8 bits guarda apenas um valor por vez
+    - Essa diferença demonstra a superioridade em termos de processamento de um computador quântico
+  - Algoritmos quânticos relevantes para a criptografia
+    - Shor: realiza a fatoração de números primos em tempo polinomial
+    - Grover: realiza pesquisa em lista não ordenada em tempo da ordem de √N
+    - Ambos são executados de forma paralela, permitindo alto ganho de desempenho
+  - Comparativo entre algoritmo clássico e algoritmo de Shor para fatoração
+    - Número de 512 bits: 4 dias (clássico) contra 34 segundos (Shor)
+    - Número de 1024 bits: 100 mil anos (clássico) contra 4,5 minutos (Shor)
+    - Número de 2048 bits: 100 mil bilhões de anos (clássico) contra 36 minutos (Shor)
+  - Fragilidade da criptografia tradicional baseada em chave
+    - Quanto mais complexa a chave, mais forte a criptografia, mas a chave se torna um fator crítico que precisa ser mantido em segredo
+    - Se um atacante tiver acesso à chave, os dados podem ser facilmente descriptografados
+    - Transmissão e armazenamento seguros de chaves são um problema dos sistemas de criptografia atuais
+  - Protocolo RPS
+    - Solução da criptografia quântica para o problema de distribuição de chaves
+    - Distribui chaves e pacotes de dados usando elementos quânticos
+    - Capaz de detectar erros na transmissão caso um atacante realize leitura não autorizada dos dados
+    - Pode invalidar a chave comprometida e reiniciar o processo quantas vezes forem necessárias, até que uma chave válida seja transmitida com segurança
+
+- Considerações finais
+  - Tecnologias de proteção de dados são importantes e devem ser amplamente adotadas, mas sozinhas podem não ser suficientes para evitar vazamentos
+  - Cuidados dos colaboradores na divulgação de informações organizacionais são um complemento essencial para garantir a confidencialidade
+
+- Siglas e termos explicados
+  - ECC: Elliptic Curve Cryptography (criptografia de curvas elípticas)
+  - ECDSA: Elliptic Curve Digital Signature Algorithm
+  - ECDLP: Elliptic Curve Discrete Logarithm Problem
+  - DLP: Discrete Logarithm Problem (problema do logaritmo discreto)
+  - NIST: Instituto Nacional de Padrões e Tecnologia dos Estados Unidos
+  - NSA: Agência Nacional de Segurança dos Estados Unidos
+  - IPSec: IP Security
+  - AH: Authentication Header (cabeçalho de autenticação)
+  - ESP: Encapsulating Security Payload
+  - IETF: Internet Engineering Task Force
+  - SSL/TLS: Secure Sockets Layer / Transport Layer Security
+  - HTTPS: HTTP sobre SSL
+  - PGP: Pretty Good Privacy
+  - GPG: GNU Privacy Guard
+  - VPN: Virtual Private Network
+  - QKD: Quantum Key Distribution (Distribuição Quântica de Chaves)
+  - BB84: primeiro protocolo de criptografia quântica, proposto por Bennett e Brassard em 1984
+
+- Referências para ampliar a pesquisa
+  - Forouzan, B. A. "Comunicação de Dados e Redes de Computadores", 4ª ed., Porto Alegre: AMGH, 2008
+  - Naziridis, N. "Comparando ECDSA vs RSA": https://www.ssl.com/pt/artigo/comparando-ecdsa-vs-rsa/
+  - Apache HTTP Server, "SSL/TLS Strong Encryption: How-To": https://httpd.apache.org/docs/2.4/ssl/ssl_howto.html
+  - Electronic Frontier Foundation, "How to: Use PGP for Windows": https://ssd.eff.org/en/module/how-use-pgp-windows
