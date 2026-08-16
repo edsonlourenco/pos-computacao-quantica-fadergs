@@ -1,0 +1,131 @@
+# Tipos de Qubits
+
+- Introdução
+  - Objetivo da unidade: compreender o conceito de qubit e suas principais implementações físicas
+  - A computação quântica evoluiu muito graças aos diferentes tipos de implementação de qubits
+  - Computador clássico: usa em torno de 10.000 elétrons para representar de forma confiável um único bit binário
+  - Computador quântico: emprega um único objeto quântico isolado (elétron, fóton) para criar um qubit, preservando suas propriedades quânticas
+
+- Objetivos da unidade
+  - Compreender os conceitos de qubits
+  - Compreender as principais implementações físicas de qubits
+
+- O que é um qubit
+  - Sistema quântico de dois níveis, análogo ao bit clássico, mas com propriedades quânticas
+  - Exemplos físicos de sistema de dois níveis: spin de um elétron, polarização de um fóton
+  - Representação por dois vetores de estado (ex.: |↑⟩ e |↓⟩ para spin do elétron)
+  - Convenção: |↑⟩ associado ao bit clássico 0, |↓⟩ associado ao bit clássico 1
+  - Um qubit pode estar em superposição dos estados |0⟩ e |1⟩, diferente do bit clássico que só assume um valor por vez
+
+- Vantagens do processamento quântico
+  - Ganho de memória
+    - Registrador clássico de 2 bits armazena um único número por vez entre 00, 01, 10 e 11
+    - Registrador quântico de 2 qubits preserva a superposição e armazena o vetor de estado |00⟩ + |01⟩ + |10⟩ + |11⟩ simultaneamente
+    - Generalização: um registrador de N qubits pode armazenar 2^N números binários ao mesmo tempo, enquanto N bits clássicos armazenam apenas 1
+    - Exemplo de escala: 2 GB de memória clássica equivalem a ~16 bilhões de bits; uma memória quântica de apenas 32 qubits pode representar mais informação do que isso
+  - Ganho de velocidade computacional
+    - Um computador clássico executa cálculos sequencialmente, passo a passo
+    - Um computador quântico usa superposição para processar múltiplos cálculos em paralelo (computação altamente paralelizada)
+    - Exemplo: somar um número binário fixo a uma superposição a|00⟩ + b|01⟩ executa os dois cálculos ao mesmo tempo
+    - Limitação prática: o resultado só pode ser obtido por medição, que colapsa a função de onda e retorna um único resultado aleatório entre os possíveis
+    - Não é trivial saber a qual "ramo" do cálculo paralelo o resultado medido pertence
+
+- Esfera de Bloch
+  - Representação visual e geométrica do estado de um único qubit
+  - Cada ponto da superfície da esfera corresponde a uma superposição possível e diferente
+  - Polo superior e polo inferior representam os dois estados mensuráveis do qubit (½0⟩ e ½1⟩ na notação do material, equivalentes a |0⟩ e |1⟩)
+  - Uma flecha (vetor de estado) aponta para a posição atual do qubit na esfera
+  - Quando a flecha não aponta para os polos, o qubit está em estado superposto
+  - No equador, o qubit tem 50% de chance de colapsar em |0⟩ e 50% de colapsar em |1⟩ ao ser medido
+  - Mudanças no estado do qubit correspondem a rotações da flecha sobre a esfera
+  - Limitação importante: a esfera de Bloch representa apenas um único qubit; não pode ser usada para visualizar sistemas com dois ou mais qubits (nem emaranhamento)
+
+- Decoerência
+  - Um dos maiores desafios da computação quântica atual
+  - Definição: processo de degradação pelo qual a informação armazenada nos qubits é corrompida por ruído aleatório do ambiente
+  - Induzida pela interação entre os qubits e o meio: vibrações mecânicas, flutuações de temperatura, campos eletromagnéticos
+  - Teorema da não clonagem (no-cloning theorem)
+    - Não é possível copiar (clonar) um estado quântico desconhecido
+    - Motivo: qualquer tentativa de copiar exige medir o estado, e a medição causa o colapso da superposição, destruindo a informação original
+    - Isso impede o uso de estratégias clássicas de backup (cópias redundantes) para proteger a informação quântica
+  - Estratégia de mitigação: refrigeradores de diluição
+    - Fornecem um banho de hélio e permitem operar o computador quântico próximo do zero absoluto
+    - Temperaturas extremamente baixas reduzem a decoerência ao mínimo possível
+
+- Implementações físicas de qubits
+  - Qubits de armadilha de íons (ion trap)
+    - Confinam uma cadeia de átomos carregados (íons) isolando-os em um tubo a vácuo por meio de campo magnético
+    - O campo magnético é gerado por 4 hastes cilíndricas que carregam corrente elétrica oscilatória
+    - Induz um campo magnético alternado (campo de radiofrequência) que muda de polaridade
+  - Qubits de spin de elétrons
+    - História ligada ao desenvolvimento da tecnologia moderna de semicondutores
+    - Semicondutor: material que conduz corrente elétrica de forma mais eficiente que isolantes (ex.: vidro), porém menos eficiente que condutores (ex.: cobre)
+    - Silício: semicondutor mais importante tecnologicamente, obtido a partir da areia de quartzo derretida
+    - Impurezas de fósforo no silício possuem spin nuclear e de elétron, propriedade explorada para qubits
+    - Modelo de Kane (1998)
+      - Bruce Kane propôs uma abordagem baseada em íons de silício
+      - Rede de átomos de fósforo imersos em substrato de silício puro
+      - Qubits codificados nos spins nucleares do fósforo
+      - Emaranhamento entre átomos adjacentes mediado pela interação entre spins do elétron e do núcleo
+    - Pontos quânticos eletrostáticos (quantum dots)
+      - Proposto por David Loss e David DiVincenzo
+      - Confinam elétrons isolados em substratos de silício por meio de uma rede de eletrodos metálicos
+      - A diferença de potencial nos eletrodos atrai ou repele os elétrons, controlando seu movimento
+      - Em campo magnético externo, permite controlar e confinar spins de elétrons isolados para implementar portas lógicas quânticas
+      - Abordagem ainda não aplicável à computação quântica em larga escala
+  - Qubits supercondutores
+    - Supercondutividade descoberta em 1911 por Heike Kamerlingh Onnes, estudando mercúrio sólido em temperaturas criogênicas
+    - Abaixo de uma temperatura crítica (~4,2 K para o mercúrio), a resistência elétrica desaparece e a corrente flui livremente e continuamente
+    - Teoria BCS (Bardeen, Cooper e Schrieffer) explica o efeito com base em pares de elétrons (par de Cooper)
+    - Em uma rede cristalina supercondutora, elétrons trocam energia com os phonons (vibrações da rede) sem perdas, formando o par de Cooper
+    - Par de Cooper se move pela rede cristalina carregando energia elétrica com resistividade zero
+    - Junção de Josephson
+      - Arquitetura de dois supercondutores separados por uma barreira isolante fina
+      - Cria efeito túnel entre os dois supercondutores, mas para pares de Cooper (não elétrons isolados)
+    - Fluxo qubit (qubit de corrente persistente)
+      - Codifica os qubits por meio de correntes elétricas levadas por pares de Cooper
+      - As correntes fluem em um anel supercondutor no sentido horário e anti-horário
+    - SQUID (Superconducting Quantum Interference Device)
+      - Arquitetura responsável por implementar o fluxo qubit
+      - Os pares de Cooper se movimentam como ondas quânticas (dualismo onda-partícula)
+      - As correntes podem formar uma superposição fluindo nos dois sentidos simultaneamente, com certas probabilidades
+      - Ao medir a direção do fluxo, a função de onda colapsa e o par de Cooper flui em uma única direção
+  - Outras plataformas relevantes atualmente
+    - Fótons manipulados em circuitos ópticos integrados
+    - Átomos neutros controlados por pinças ópticas (ex.: empresas QuEra, Pasqal)
+    - As plataformas mais exploradas comercialmente hoje são: circuitos supercondutores (Google, IBM, Rigetti) e íons aprisionados (IonQ, Quantinuum)
+
+- Desafios atuais de escalabilidade
+  - Correção de erros quânticos funciona na teoria, mas gera grande sobrecarga na prática
+  - Pode ser necessário mais de mil qubits físicos (incluindo qubits "mágicos") para formar um único qubit lógico tolerante a falhas
+  - O problema não é teórico: os códigos de correção de erros são consistentes com a mecânica quântica e já testados em pequena escala
+  - O desafio real é de engenharia: fidelidade dos qubits, número de qubits físicos disponíveis, conectividade e taxa de erro
+  - Ainda faltam arquiteturas de hardware e protocolos de destilação de estados mágicos que tornem essa sobrecarga viável em larga escala
+
+- Conceitos de mecânica quântica aplicados aos qubits
+  - Estados emaranhados
+    - Definição correta: estado composto em que o estado global não pode ser escrito como produto dos estados dos subsistemas
+    - Exibe correlações quânticas sem análogo clássico, podendo violar desigualdades de Bell
+    - Não permite enviar informação de forma controlada mais rápido que a luz (não há sinalização superluminal, apenas correlação estatística)
+  - Portas lógicas quânticas
+    - Descritas por operadores unitários, que preservam a norma do estado (soma das probabilidades permanece 1)
+    - Operações unitárias são, em princípio, reversíveis (sempre existe uma porta inversa)
+    - Diferem das portas clássicas irreversíveis (como AND e OR), que podem apagar informação
+    - Não podem clonar perfeitamente um estado quântico desconhecido (teorema da não clonagem)
+  - Superposição e medição de um qubit
+    - A soma das probabilidades de medir 0 e de medir 1 deve ser sempre 100%
+    - A superposição existe antes da medição; ao medir, obtém-se sempre um único resultado (0 ou 1), nunca os dois ao mesmo tempo
+    - Superposição não é um "valor clássico intermediário" fixo (como 0,5); é uma distribuição de probabilidades sobre resultados discretos
+
+- Siglas e termos explicados
+  - SQUID: Superconducting Quantum Interference Device (dispositivo supercondutor de interferência quântica)
+  - BCS: teoria de Bardeen, Cooper e Schrieffer sobre supercondutividade
+  - Par de Cooper: par de elétrons que se move sem resistência em um supercondutor
+  - Phonon: menor quantidade de energia vibracional em uma rede cristalina, comporta-se como uma partícula quântica
+  - No-cloning theorem: teorema da não clonagem de estados quânticos
+
+- Referências para ampliar a pesquisa
+  - Nussenzveig, H. M. "Curso de Física Básica", Editora Blucher
+  - Mahon, J. R. P. "Mecânica Quântica - Desenvolvimento Contemporâneo com Aplicações", Grupo GEN
+  - Falbriard, C.; Brosso, I. "Computação Quântica", Editora Alta Books
+  - Gibney, E. "Hello quantum world! Google publishes landmark quantum supremacy claim", Nature 574, 505-510 (2019)
