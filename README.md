@@ -24,11 +24,11 @@ O curso é muito completo e estruturado para cobrir desde a física básica nece
 | **Eixo de Desenvolvimento Integral** | Felicidade no Trabalho e Performance Sustentável | 40 horas | Desenvolvimento de competências profissionais, bem-estar e carreira. |
 | **Eixo Específico (Obrigatórios)** | [Aprendizado de Máquina](#-aprendizado-de-máquina-ca-concluído) | 40 horas | Fundamentos de IA e algoritmos clássicos de aprendizado. |
 | | Conceitos de Computação Quântica | 40 horas | Bases e teorias matemáticas da computação quântica. |
-| | Física para Computação Quântica e Qubit | 40 horas | Comportamento físico de qubits e sistemas quânticos. |
+| | [Física para Computação Quântica e Qubit](#️-física-para-computação-quântica-e-qubit-ca-concluído) | 40 horas | Comportamento físico de qubits e sistemas quânticos. |
 | | Programação para Computação Quântica | 40 horas | Lógica e desenvolvimento de circuitos quânticos iniciais. |
 | | Aplicações com Python Qiskit | 40 horas | Uso da biblioteca Qiskit (IBM) para simular algoritmos quânticos. |
 | | Aplicações Inovadoras em Computação Quântica | 40 horas | Casos de uso reais e inovações do mercado. |
-| | Criptografia Aplicada & Comunicações Seguras | 40 horas | Segurança de dados na era quântica. |
+| | [Criptografia Aplicada & Comunicações Seguras](#-criptografia-aplicada--comunicações-seguras-ca-concluído) | 40 horas | Segurança de dados na era quântica. |
 | | Segurança Aplicada à Computação Quântica | 40 horas | Protocolos de segurança de redes e computadores quânticos. |
 | **Eixo Personalizável** | Componente Optativo à Escolha | 40 horas | Customização da formação conforme interesses profissionais. |
 
@@ -36,22 +36,22 @@ O curso é muito completo e estruturado para cobrir desde a física básica nece
 
 ## 🧠 Aprendizado de Máquina (CA Concluído)
 
-Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópicos estudados, explicados de forma simples, com links para os **Mapas Mentais** (resumos teóricos em texto) e os **Notebooks** (códigos práticos em Python).
+Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópicos estudados, explicados de forma simples, com links para os **Mapas Mentais** (resumos teóricos em texto) e os **Códigos Práticos** (arquivos `.py` interativos em Python).
 
 ### 1. Ensinando um Sistema a Aprender
 *   **O que significa?** Como usar dados históricos para treinar um modelo para fazer previsões e como medir se ele está indo bem. Também abordamos o cuidado para o computador não "decorar" as respostas do passado em vez de aprender de verdade (um problema chamado de *overfitting*).
 *   🧠 **Resumo Teórico:** [1-ensinando-um-sistema-aprender.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/1-ensinando-um-sistema-aprender.md)
-*   📓 **Código Prático:** [1-classificadores.py](src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.py)
+*   📓 **Código Prático:** [1-classificadores.py](src/fundamentos/1-classificadores.py)
 
 ### 2. Clusterização de Dados
 *   **O que significa?** É a técnica de agrupar coisas parecidas quando não temos respostas prontas. Por exemplo, agrupar clientes de um e-commerce em "grupos de interesses parecidos" para enviar promoções personalizadas. Também estudamos como criar sistemas de recomendação (como os da Netflix).
 *   🧠 **Resumo Teórico:** [2-clusterização-de-dados.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/2-clusterização-de-dados.md)
-*   📓 **Código Prático:** [2-clusterização-de-dados.py](src/01-aprendizado-de-maquina-overview/notebooks/2-clusterização-de-dados.py)
+*   📓 **Código Prático:** [2-clusterização-de-dados.py](src/fundamentos/2-clusterização-de-dados.py)
 
 ### 3. Regressão e Séries Temporais
 *   **O que significa?** Usado para prever números exatos (como o preço de uma ação amanhã, o faturamento de uma empresa no próximo mês ou a temperatura). Estudamos como identificar tendências que mudam ao longo do tempo.
 *   🧠 **Resumo Teórico:** [3-regressão-e-séries-temporais.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/3-regressão-e-séries-temporais.md)
-*   📓 **Código Prático:** [3-regressão-e-séries-temporais.py](src/01-aprendizado-de-maquina-overview/notebooks/3-regressão-e-séries-temporais.py)
+*   📓 **Código Prático:** [3-regressão-e-séries-temporais.py](src/fundamentos/3-regressão-e-séries-temporais.py)
 
 ### 4. Aprendizado por Reforço, Redes Neurais e Comitês
 *   **O que significa?** 
@@ -60,9 +60,62 @@ Este foi o primeiro módulo concluído no curso. Abaixo, você encontra os tópi
     *   *Comitês:* Juntar várias inteligências artificiais simples para trabalharem juntas, melhorando o resultado final (a união faz a força!).
 *   🧠 **Resumo Teórico:** [4-aprendizado-por-reforco-redes-neurais-e-comites.md](docs/mapas-mentais/01-aprendizado-de-maquina-overview/4-aprendizado-por-reforco-redes-neurais-e-comites.md)
 *   📓 **Códigos Práticos:**
-    *   [4-rl-q-learning.py](src/01-aprendizado-de-maquina-overview/notebooks/4-rl-q-learning.py) (Aprendizado por Reforço na prática)
-    *   [4b-redes-neurais-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4b-redes-neurais-comites.py) (Redes neurais e combinação de modelos)
-    *   [4-aprendizado-por-reforco-redes-neurais-e-comites.py](src/01-aprendizado-de-maquina-overview/notebooks/4-aprendizado-por-reforco-redes-neurais-e-comites.py) (Integração de todos os temas do módulo)
+    *   [4-rl-q-learning.py](src/fundamentos/4-rl-q-learning.py) (Aprendizado por Reforço na prática)
+    *   [4b-redes-neurais-comites.py](src/fundamentos/4b-redes-neurais-comites.py) (Redes neurais e combinação de modelos)
+    *   [4-aprendizado-por-reforco-redes-neurais-e-comites.py](src/fundamentos/4-aprendizado-por-reforco-redes-neurais-e-comites.py) (Integração de todos os temas do módulo)
+
+---
+
+## ⚛️ Física para Computação Quântica e Qubit (CA Concluído)
+
+Este módulo aprofunda a física por trás da computação quântica: como a informação é codificada e transmitida usando qubits, os fenômenos de superposição e emaranhamento, os diferentes jeitos de construir um qubit fisicamente e como um computador quântico completo (hardware + algoritmos) funciona na prática.
+
+> A unidade introdutória do módulo (fundamentos de física quântica: dualidade onda-partícula, princípio da incerteza etc.) ainda não tem um resumo dedicado aqui; os mesmos conceitos já estão cobertos em [2-fundamentos-da-mecanica-quantica.md](docs/mapas-mentais/02-conceitos-computacao-quantica/2-fundamentos-da-mecanica-quantica.md), do módulo de Conceitos de Computação Quântica.
+
+### 2. Teoria da Informação Quântica
+*   **O que significa?** Como a computação quântica também é uma teoria da informação: a diferença entre bit e qubit, os teoremas de Shannon sobre compressão e transmissão de dados, o que é entropia da informação e por que não é possível "copiar e colar" um qubit desconhecido (teorema da não clonagem).
+*   🧠 **Resumo Teórico:** [2-teoria-da-informacao-quantica.md](docs/mapas-mentais/03-fisica-para-computacao-quantica-qubit/2-teoria-da-informacao-quantica.md)
+
+### 3. Superposição e Emaranhamento Quântico
+*   **O que significa?** Superposição é a capacidade de um qubit estar em mais de um estado ao mesmo tempo; emaranhamento é a correlação profunda entre dois ou mais qubits, que faz com que se comportem como uma única entidade, não importa a distância entre eles.
+*   🧠 **Resumo Teórico:** [3-superposicao-e-emaranhamento-quantico.md](docs/mapas-mentais/03-fisica-para-computacao-quantica-qubit/3-superposicao-e-emaranhamento-quantico.md)
+*   📓 **Código Prático:** [superposicao-e-emaranhamento.py](src/quantum/superposicao-e-emaranhamento.py) (superposição de 1 qubit e estado de Bell)
+
+### 4. Qubits
+*   **O que significa?** O que é, na prática, um qubit físico (spin de elétron, polarização de fóton), as vantagens de memória e velocidade da computação quântica, as portas lógicas quânticas, a esfera de Bloch e as principais formas de implementar um qubit (armadilha de íons, spin de elétrons, supercondutores).
+*   🧠 **Resumo Teórico:** [4-qubits.md](docs/mapas-mentais/03-fisica-para-computacao-quantica-qubit/4-qubits.md)
+
+### 5. Computadores Quânticos e Algoritmos Quânticos
+*   **O que significa?** Como um computador quântico completo é estruturado (do qubit físico até o algoritmo de alto nível), o que são redes quânticas, e como funciona um algoritmo quântico de verdade — usando o algoritmo de Deutsch como exemplo de como a superposição e o emaranhamento permitem responder uma pergunta com uma única medição.
+*   🧠 **Resumo Teórico:** [5-computadores-quanticos-e-algoritmos-quanticos.md](docs/mapas-mentais/03-fisica-para-computacao-quantica-qubit/5-computadores-quanticos-e-algoritmos-quanticos.md)
+*   📓 **Código Prático:** [algoritmo-deutsch-jozsa.py](src/quantum/algoritmo-deutsch-jozsa.py) (algoritmo de Deutsch para funções constantes e balanceadas)
+
+---
+
+## 🔐 Criptografia Aplicada & Comunicações Seguras (CA Concluído)
+
+Este módulo cobre a segurança da informação de ponta a ponta: os princípios que orientam qualquer sistema de segurança (confidencialidade, integridade, disponibilidade), os algoritmos de criptografia usados na prática, os protocolos que protegem dados em trânsito, a gestão de riscos e conformidade, e as boas práticas tecnológicas e operacionais para proteger uma organização.
+
+### 1. Princípios da Segurança da Informação
+*   **O que significa?** Os três pilares que orientam qualquer decisão de segurança (confidencialidade, integridade e disponibilidade), o que é criptografia e chaves, a diferença entre criptografia simétrica e assimétrica, funções hash, assinatura digital e certificado digital.
+*   🧠 **Resumo Teórico:** [1-principios-da-seguranca-da-informacao.md](docs/mapas-mentais/04-criptografia-aplicada-comunicacoes-seguras/1-principios-da-seguranca-da-informacao.md)
+*   📓 **Código Prático:** [algoritmos-criptografia.py](src/criptografia/algoritmos-criptografia.py) (hash SHA-256, criptografia simétrica AES e assimétrica RSA)
+
+### 2. Principais Algoritmos de Criptografia
+*   **O que significa?** Como funcionam, na prática, os cifradores de fluxo e de bloco, o algoritmo simétrico AES (padrão atual de mercado) e o algoritmo assimétrico RSA (baseado na dificuldade de fatorar números primos gigantes).
+*   🧠 **Resumo Teórico:** [2-principais-algoritmos-de-criptografia.md](docs/mapas-mentais/04-criptografia-aplicada-comunicacoes-seguras/2-principais-algoritmos-de-criptografia.md)
+
+### 3. Sistemas Criptográficos
+*   **O que significa?** Criptografia de curvas elípticas (mais eficiente que o RSA), os protocolos que protegem dados em trânsito (IPSec, SSL/TLS, PGP, VPN) e uma introdução à criptografia quântica (Distribuição Quântica de Chaves) como ameaça e solução para a criptografia do futuro.
+*   🧠 **Resumo Teórico:** [3-sistemas-criptograficos.md](docs/mapas-mentais/04-criptografia-aplicada-comunicacoes-seguras/3-sistemas-criptograficos.md)
+
+### 4. Gestão em Segurança da Informação
+*   **O que significa?** Como fazer análise e tratamento de riscos, a Política Nacional de Segurança das Informações e a ICP-Brasil, a LGPD e outras legislações relevantes, auditoria de sistemas (norma ISO/IEC 27002) e os mecanismos de autenticação e controle de acesso (senhas, token, biometria, autenticação de dois fatores).
+*   🧠 **Resumo Teórico:** [4-gestao-em-seguranca-da-informacao.md](docs/mapas-mentais/04-criptografia-aplicada-comunicacoes-seguras/4-gestao-em-seguranca-da-informacao.md)
+
+### 5. Boas Práticas em Segurança da Informação
+*   **O que significa?** As principais tecnologias de defesa de uma rede (firewall, IPS, DLP, firewall de nova geração), como construir um plano de continuidade de negócios, segurança física e de sistemas operacionais, defesa contra malwares e os principais tipos de ataque a redes.
+*   🧠 **Resumo Teórico:** [5-boas-praticas-em-seguranca-da-informacao.md](docs/mapas-mentais/04-criptografia-aplicada-comunicacoes-seguras/5-boas-praticas-em-seguranca-da-informacao.md)
 
 ---
 
@@ -100,13 +153,13 @@ Como convertemos os notebooks para arquivos `.py` interativos com linhas mágica
 
 * **Pelo VS Code (Recomendado):**
   1. Abra a pasta do projeto no VS Code.
-  2. Abra um dos arquivos `.py` dentro da pasta `src/01-aprendizado-de-maquina-overview/notebooks/`.
+  2. Abra um dos arquivos `.py` dentro da pasta `src/fundamentos/`.
   3. Clique na opção **"Run Cell"** (Executar Célula) que aparece em cima de cada bloco para rodar o código de forma interativa.
 
 * **Diretamente pelo terminal:**
   Caso queira rodar o arquivo por inteiro como um script convencional do Python:
   ```bash
-  uv run python src/01-aprendizado-de-maquina-overview/notebooks/1-classificadores.py
+  uv run python src/fundamentos/1-classificadores.py
   ```
 
 ---
